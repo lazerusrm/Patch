@@ -43,7 +43,7 @@ Speak in the listening gaps; playback is half duplex and has no barge-in.
 
 Sleep stops automatic speech and lights while preserving wake listening. There
 are 24 jokes, nine stories (playback capped at one minute), and six tricks/treats,
-including three original musical clips and an optional chocolate offering gag.
+and an optional chocolate offering gag. (The custom jingles were retired on 2026-10-31.)
 Visitors always keep their candy. One character stays with a group until departure.
 On arrival, clearly visible costumes get affectionate cheeky verdicts, silly awards
 or generous scores in that character’s style. Unclear views prompt a question.
@@ -160,8 +160,7 @@ shell, patch, apps, plugins and optional tools disabled. Provider data handling
 is governed by the account/service.
 
 `voices.json` records original and fan reference performances, prompts, seeds and
-model revisions; reference audio is in `assets/voices`. Musical originals are in
-`assets/songs`. Breeze source is Apache-2.0; the model/output terms restrict use
+model revisions; reference audio is in `assets/voices`. Breeze source is Apache-2.0; the model/output terms restrict use
 to research/noncommercial use. This installation is a personal porch project.
 
 ## Development

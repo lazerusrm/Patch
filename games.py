@@ -17,12 +17,6 @@ GAMES = {
     'tiny_curse': {'kind': 'trick', 'lines': [
         'Trick! I have cursed you. For the next five seconds, you must walk like a zombie. Go! ... Five, four, three, two, one. Curse lifted. Very convincing zombie.'
     ]},
-    'jingle_ghost': {'kind': 'treat', 'clip': 'jingle_ghost', 'performer': 'boo', 'lines': [
-        'A treat! A little ghost has a song for you. She insists the high notes are haunted.'
-    ], 'lyrics': 'Boo to you and boo to me! Friendly ghosts are all we see. Float along and sing it bright. Sweet dreams on this spooky night!'},
-    'jingle_pumpkin': {'kind': 'treat', 'clip': 'jingle_pumpkin', 'performer': 'patch', 'lines': [
-        'A treat! A song from a pumpkin with absolutely no formal musical qualifications.'
-    ], 'lyrics': 'Orange grin and candle glow! Off to find the treats we go. Tiny feet and costumes bright. Crunchy leaves and sweet delight!'},
 }
 
 GAMES.update({
@@ -197,6 +191,8 @@ def benched(key):
     return False
 
 
+# The custom jingles were retired (owner, 2026-10-31: they sounded weird). A song request
+# now gets an ordinary trick or treat; any future scene with a 'clip' becomes a song again.
 SONGS = tuple(key for key, scene in GAMES.items() if scene.get('clip'))
 
 

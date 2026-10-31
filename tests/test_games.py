@@ -48,7 +48,7 @@ class GameTests(unittest.TestCase):
             self.assertNotEqual(key, previous)
             seen.add(GAMES[key]['kind'])
             previous = key
-        self.assertEqual(seen, {'trick', 'treat'})
+        self.assertEqual(seen, {scene['kind'] for scene in GAMES.values() if not scene.get('manual_only')})
 
 
 class TrogdorIntentTests(unittest.TestCase):
@@ -70,7 +70,6 @@ class BenchTests(unittest.TestCase):
         from games import benched, intent, SONGS
         self.assertEqual(AUTO_CHARACTERS, ('patch', 'trogdor', 'sorting_hat'))
         self.assertFalse(benched('jingle_pumpkin'))
-        self.assertIn('jingle_pumpkin', SONGS)
-        self.assertNotIn('jingle_bones', SONGS)  # 'Rattle, rattle, dancing bones' retired (owner).
+        self.assertEqual(SONGS, ())  # Custom jingles retired (owner, 2026-10-31).
         self.assertEqual(intent('Sing me a song!'), 'song')
         self.assertEqual(intent('can you sing a song'), 'song')

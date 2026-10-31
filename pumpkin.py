@@ -2277,7 +2277,7 @@ class Pumpkin:
                         continue
                     if action in ('game', 'song'):
                         last_song = getattr(self, 'last_song', None)
-                        key = random.choice([k for k in SONGS if k != last_song] or SONGS) if action == 'song' else None
+                        key = random.choice([k for k in SONGS if k != last_song] or SONGS) if action == 'song' and SONGS else None
                         self.last_song = key or last_song
                         self.play_game(character, yielding, key=key)
                         turns, quiet = 0, False
