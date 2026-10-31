@@ -1,0 +1,204 @@
+{
+  "jokes": [
+    {
+      "id": "patch_j01",
+      "character": "patch",
+      "title": "Historical Significance",
+      "text": "At last, a plaque recognizing my centuries of service. Bronze lettering. Very dignified. It says, do not sit."
+    },
+    {
+      "id": "patch_j02",
+      "character": "patch",
+      "title": "The Complaint",
+      "text": "A squirrel complained that I lack branches. I explained that I am an ancient horror. It requested a different tree."
+    },
+    {
+      "id": "patch_j03",
+      "character": "patch",
+      "title": "Supporting Cast",
+      "text": "I rehearsed an ominous creak all afternoon. Then the porch chair did it perfectly. Naturally, it got the solo."
+    },
+    {
+      "id": "patch_j04",
+      "character": "patch",
+      "title": "A Terrible Moth",
+      "text": "I used to strike terror into entire villages. Last Tuesday, a moth flew into my mouth. I had to call for help."
+    },
+    {
+      "id": "patch_j05",
+      "character": "patch",
+      "title": "Beware the Rabbit",
+      "text": "I put up a sign saying BEWARE. A rabbit ate it. Apparently, I was advertising a salad bar."
+    },
+    {
+      "id": "patch_j06",
+      "character": "patch",
+      "title": "The Leaf's Revenge",
+      "text": "A leaf vowed to nip at my ankles for eternity. We are both waiting for me to acquire ankles."
+    },
+    {
+      "id": "patch_j07",
+      "character": "patch",
+      "title": "Personal Growth",
+      "text": "They told me to get a life. I am a pumpkin. I got a candle. Apparently, that is close enough."
+    },
+    {
+      "id": "patch_j08",
+      "character": "patch",
+      "title": "Property Dispute",
+      "text": "A spider has woven a splendid crown upon my head. I thanked it. It corrected me. Apparently, that's a bungalow."
+    },
+    {
+      "id": "boo_j01",
+      "character": "boo",
+      "title": "Eyebrow Emergency",
+      "text": "Behold my terrible scowl! I drew on eyebrows for the occasion. Unfortunately, they're upside down. Now I'm terribly interested."
+    },
+    {
+      "id": "boo_j02",
+      "character": "boo",
+      "title": "Dramatic Entrance",
+      "text": "Last night I walked through a wall to make a dramatic entrance. It was a cupboard. I frightened a mop."
+    },
+    {
+      "id": "boo_j03",
+      "character": "boo",
+      "title": "Haunted Mirror",
+      "text": "I bought a haunted mirror. It said boo. I said boo. We have been doing this since Tuesday."
+    },
+    {
+      "id": "boo_j04",
+      "character": "boo",
+      "title": "Echo Notes",
+      "text": "I released a mournful cry into the darkness. My echo said, again, but happier. Even the emptiness is directing me."
+    },
+    {
+      "id": "boo_j05",
+      "character": "boo",
+      "title": "A New Career",
+      "text": "I tried to say boo with my mouth full. It came out moo. A cow answered. Now we are in a band."
+    },
+    {
+      "id": "boo_j06",
+      "character": "boo",
+      "title": "Internal Weather",
+      "text": "Hear the thunder of approaching doom! Actually, that's my ghost stomach. The forecast is sandwiches, with a chance of seconds."
+    },
+    {
+      "id": "boo_j07",
+      "character": "boo",
+      "title": "A Chilling Review",
+      "text": "My chilling presence once silenced an entire banquet. Then someone asked me to stand beside the pudding. Apparently, I was useful."
+    },
+    {
+      "id": "boo_j08",
+      "character": "boo",
+      "title": "The Scaredy Ghost",
+      "text": "My scary voice scared me. I screamed. That scared me again. We may be here all night."
+    },
+    {
+      "id": "nibbles_j01",
+      "character": "nibbles",
+      "title": "Badge of Convenience",
+      "text": "My pretend inspector badge came from a cereal box. Very impressive lettering. Apparently, my official title is Serving Suggestion."
+    },
+    {
+      "id": "nibbles_j02",
+      "character": "nibbles",
+      "title": "Nougat Investigation",
+      "text": "My pretend investigation finds the word nougat suspicious. Sounds like somebody saying no with their mouth full of evidence."
+    },
+    {
+      "id": "nibbles_j03",
+      "character": "nibbles",
+      "title": "Wrong End",
+      "text": "Official candy inspection. Chocolate: excellent. Wrappers: chewy. I may have started at the wrong end."
+    },
+    {
+      "id": "nibbles_j04",
+      "character": "nibbles",
+      "title": "The Raisin Incident",
+      "text": "Who put raisins in the candy? I came here to inspect snacks, not attend a grape's retirement party."
+    },
+    {
+      "id": "nibbles_j05",
+      "character": "nibbles",
+      "title": "Martial Arts",
+      "text": "I had a black belt in karate. It was licorice. I am now completely unqualified."
+    },
+    {
+      "id": "nibbles_j06",
+      "character": "nibbles",
+      "title": "Stamp of Approval",
+      "text": "I missed the paperwork with my pretend approval stamp. Hit the carpet. Congratulations to the carpet, our new regional director."
+    },
+    {
+      "id": "nibbles_j07",
+      "character": "nibbles",
+      "title": "The Crayon Academy",
+      "text": "I opened a school for goblins. First lesson: do not eat the crayons. We are still on the first lesson."
+    },
+    {
+      "id": "nibbles_j08",
+      "character": "nibbles",
+      "title": "A Very Mysterious Bowl",
+      "text": "The candy bowl is haunted. The chocolate keeps vanishing. I blame ghosts. The chocolate on my face is a coincidence."
+    }
+  ],
+  "stories": [
+    {
+      "id": "patch_s01",
+      "character": "patch",
+      "title": "The Locked Cupboard",
+      "text": "At the old estate, I heard whispering inside a locked cupboard. Every midnight, the same dreadful words. A little to the left. I finally opened it. Inside, a ghost was trying to hang a portrait straight. We spent ninety years adjusting it. A fine friendship. Terrible progress. The portrait was of a crooked wall."
+    },
+    {
+      "id": "patch_s02",
+      "character": "patch",
+      "title": "The Acorn Knight",
+      "text": "Last autumn, tiny footsteps crossed the porch at midnight. Clink. Clink. A knight approached in armor made of acorn caps. I prepared a speech worthy of my ancient station. The knight was a squirrel. It planted a flag beside me and claimed the porch. I have appealed. Unfortunately, the judge is also a squirrel."
+    },
+    {
+      "id": "patch_s03",
+      "character": "patch",
+      "title": "The Invisible Blanket",
+      "text": "One moonless evening, something under my step gave a long, lonely howl. I answered with my most dignified rumble. Out crept a little ghost dog, dragging an invisible blanket. It curled beside me and fell asleep. I have guarded kingdoms, you know. This post is considerably more important. Also, I am apparently its pillow."
+    },
+    {
+      "id": "boo_s01",
+      "character": "boo",
+      "title": "The Empty Balcony",
+      "text": "On opening night, applause drifted from the theater's empty balcony. Deliciously eerie! I bowed. The clapping grew faster. I floated upstairs and discovered two enchanted gloves, applauding each other. Neither had seen my performance. Naturally, I invited them downstairs. They applauded my entrance, my speech, and a chair. Such generous critics. Such terrible standards."
+    },
+    {
+      "id": "boo_s02",
+      "character": "boo",
+      "title": "The Shadow's Audition",
+      "text": "A shadow slipped beneath my dressing room door. It had enormous ears and one trembling claw. At last, a worthy rival! Then it dropped a shadow ball at my feet. The claw was a wagging tail. I'd been holding the candle crooked. We played fetch until dawn. My dreadful rival now answers to Biscuit."
+    },
+    {
+      "id": "boo_s03",
+      "character": "boo",
+      "title": "A Voice Below the Stage",
+      "text": "During my grandest speech, a thin wail rose beneath the stage. I stopped. It stopped. I continued. It joined in, higher! Beneath a loose board sat a tiny ghost kettle, desperate to audition. I gave it the leading role. Magnificent voice. Limited movement. Our opening night ended with a standing ovation and a nice cup of imaginary tea."
+    },
+    {
+      "id": "nibbles_s01",
+      "character": "nibbles",
+      "title": "The Hungry Folder",
+      "text": "In my pretend ministry, paperwork vanished every midnight. I investigated with an imaginary magnifying glass. Behind the filing cabinet lurked a folder with tiny teeth. It was eating forms! I offered it a blank page. It burped a thank you. Excellent manners. I promoted it to Head of Making Less Work. Our most efficient department."
+    },
+    {
+      "id": "nibbles_s02",
+      "character": "nibbles",
+      "title": "Six Eyes in the Dark",
+      "text": "While dusting my imaginary diploma, I spotted six eyes beneath the desk. Six! I consulted my completely invented monster training. It recommended a biscuit break. Afterward, I bravely looked again. Three potatoes wearing spectacles. They'd come for night school. I taught them everything I know. Short lesson. They're already asking for a different teacher."
+    },
+    {
+      "id": "nibbles_s03",
+      "character": "nibbles",
+      "title": "The Smallest Hoard",
+      "text": "Deep beneath my pretend ministry, something growled inside a matchbox. I knocked with an imaginary pencil. Out peeped a dragon guarding one jellybean. Lonely work, it whispered. I appointed a pebble Deputy Jellybean, with absolutely no duties. The dragon tucked them both into bed. First successful goblin inspection. Nobody lost a snack, and somebody gained a friend."
+    }
+  ]
+}

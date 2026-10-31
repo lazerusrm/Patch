@@ -1,0 +1,13 @@
+[Unit]
+Description=Private PumpkinTalk backend tunnel to Pi
+After=network-online.target pumpkin-backend.service
+Wants=pumpkin-backend.service
+
+[Service]
+ExecStart=/usr/bin/ssh -N -T -o BatchMode=yes -o IdentitiesOnly=yes -o ExitOnForwardFailure=yes -o ConnectTimeout=5 -o ConnectionAttempts=1 -o ServerAliveInterval=15 -o ServerAliveCountMax=3 -i /home/admin/.ssh/fleet_management_ed25519 -R 127.0.0.1:8766:127.0.0.1:8766 -R 127.0.0.1:8767:127.0.0.1:8767 pi@192.168.0.49
+Restart=always
+RestartSec=5
+Nice=19
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,12 @@
+[Unit]
+Description=PumpkinTalk UniFi Protect event bridge (contract v1; plays audio only on controller request)
+After=network-online.target
+
+[Service]
+WorkingDirectory=%h/patch
+ExecStart=/usr/bin/python3 -m protect_bridge.bridge --bind 127.0.0.1 --port 8768
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=default.target

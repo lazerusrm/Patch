@@ -1,0 +1,22 @@
+[Unit]
+Description=Bounded PumpkinTalk character audition
+After=network-online.target pumpkin-tts.service bluetooth.service bluealsa.service
+Wants=pumpkin-tts.service pumpkin-bluetooth.timer
+Conflicts=pumpkin.service
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/pumpkintalk
+EnvironmentFile=/home/pi/pumpkintalk/pumpkin.env
+EnvironmentFile=/home/pi/pumpkintalk/audition.env
+ExecStart=/usr/bin/python3 /home/pi/pumpkintalk/audition.py
+ExecStopPost=+/usr/bin/systemctl --no-block start pumpkin.service
+Restart=on-failure
+RestartSec=10
+RuntimeMaxSec=95min
+TimeoutStopSec=15
+Nice=10
+CPUWeight=10
+MemoryMax=1G
+NoNewPrivileges=yes
+UMask=0077

@@ -1,0 +1,21 @@
+[Unit]
+Description=PumpkinTalk speech and Sol vision backend
+After=network-online.target
+
+[Service]
+WorkingDirectory=/mnt/runner-fast/agent-builds/pumpkintalk-20261023
+Environment=PUMPKIN_TOKEN_FILE=/mnt/runner-fast/agent-builds/pumpkintalk-20261023/runtime/backend.token
+Environment=HF_HOME=/mnt/runner-fast/agent-builds/pumpkintalk-20261023/runtime/huggingface
+Environment=TMPDIR=/mnt/runner-fast/agent-builds/pumpkintalk-20261023/runtime
+Environment=PYTHONDONTWRITEBYTECODE=1
+Environment=PUMPKIN_MODEL=gpt-6.1-sol
+ExecStart=/mnt/runner-fast/agent-builds/pumpkintalk-20261023/.venv/bin/python /mnt/runner-fast/agent-builds/pumpkintalk-20261023/backend.py
+Restart=on-failure
+RestartSec=5
+Nice=19
+CPUWeight=1
+MemoryMax=3G
+UMask=0077
+
+[Install]
+WantedBy=default.target

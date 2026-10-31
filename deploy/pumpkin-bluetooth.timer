@@ -1,0 +1,11 @@
+[Unit]
+Description=Maintain PumpkinTalk speaker connection
+
+[Timer]
+OnBootSec=10
+OnUnitInactiveSec=10
+AccuracySec=1
+Unit=pumpkin-bluetooth.service
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,204 @@
+{
+  "jokes": [
+    {
+      "id": "patch_j01",
+      "character": "patch",
+      "title": "Hollow",
+      "text": "People keep asking if I am hollow inside. Rude. ... Accurate, but rude."
+    },
+    {
+      "id": "patch_j02",
+      "character": "patch",
+      "title": "Decorating",
+      "text": "Every year. They scoop out my brains, carve a face on me, put a fire in my head, and call it decorating. If I did that to YOU, it would be a whole thing."
+    },
+    {
+      "id": "patch_j03",
+      "character": "patch",
+      "title": "Thanksgiving",
+      "text": "My cousin got made into a pie. We do not talk about it at Thanksgiving. Because he is AT Thanksgiving."
+    },
+    {
+      "id": "patch_j04",
+      "character": "patch",
+      "title": "Road",
+      "text": "Why did the pumpkin cross the road? It didn't. It rolled. Downhill. Into a pie shop. ... We don't talk about Gary."
+    },
+    {
+      "id": "patch_j05",
+      "character": "patch",
+      "title": "Scary Face",
+      "text": "I asked for a scary face. They gave me this. I look like I just stepped on a Lego."
+    },
+    {
+      "id": "patch_j06",
+      "character": "patch",
+      "title": "Security",
+      "text": "What do you call a pumpkin that guards the porch? A security gourd. ... That is me. I am the security gourd."
+    },
+    {
+      "id": "patch_j07",
+      "character": "patch",
+      "title": "Bright Thoughts",
+      "text": "They put a light inside my head and said, think bright thoughts. I am thinking about legs."
+    },
+    {
+      "id": "patch_j08",
+      "character": "patch",
+      "title": "Squash",
+      "text": "What is a pumpkin's favorite sport? Squash. ... I hate that joke. My uncle was a squash."
+    },
+    {
+      "id": "boo_j01",
+      "character": "boo",
+      "title": "See Through",
+      "text": "Why are ghosts terrible liars? You can see right through them. I played poker once. Everyone saw my cards. Through my face."
+    },
+    {
+      "id": "boo_j02",
+      "character": "boo",
+      "title": "Stage Fright",
+      "text": "I have been dead for two hundred years, and I still get stage fright. What am I scared of? Dying?"
+    },
+    {
+      "id": "boo_j03",
+      "character": "boo",
+      "title": "Roomba",
+      "text": "I tried to haunt the house next door. They have a robot vacuum. It chased me out."
+    },
+    {
+      "id": "boo_j04",
+      "character": "boo",
+      "title": "Wrong Wall",
+      "text": "I walked through a wall for a dramatic entrance. Wrong wall. It was the bathroom. Somebody was in there. We both screamed."
+    },
+    {
+      "id": "boo_j05",
+      "character": "boo",
+      "title": "Gary",
+      "text": "My rival Gary haunts a pizza place. Every night someone sings happy birthday and he takes credit. Two hundred years I've been doing this. Nobody sings to me."
+    },
+    {
+      "id": "boo_j06",
+      "character": "boo",
+      "title": "The Cat",
+      "text": "I tried to scare a cat once. It stared at me for an hour. I left. I think it's still winning."
+    },
+    {
+      "id": "boo_j07",
+      "character": "boo",
+      "title": "Not A Sheet",
+      "text": "People ask why I wear a sheet. I'm not wearing a sheet. This is me. Please stop asking about the laundry tag."
+    },
+    {
+      "id": "boo_j08",
+      "character": "boo",
+      "title": "Too Realistic",
+      "text": "I auditioned for a haunted house. They said I was too realistic. The guy in the rubber mask got the job."
+    },
+    {
+      "id": "nibbles_j01",
+      "character": "nibbles",
+      "title": "Snickers Review",
+      "text": "Snickers. Bold. Nutty. A little dramatic. Four stars. Would have been five, but it ended."
+    },
+    {
+      "id": "nibbles_j02",
+      "character": "nibbles",
+      "title": "Two Bites",
+      "text": "A full size candy bar! Do you know what that means? I can review it in two bites."
+    },
+    {
+      "id": "nibbles_j03",
+      "character": "nibbles",
+      "title": "Goblin Math",
+      "text": "Goblin math. You have ten candies. I review one. You have nine. I review nine. You have a very clean bag."
+    },
+    {
+      "id": "nibbles_j04",
+      "character": "nibbles",
+      "title": "Sharing",
+      "text": "Why don't goblins share candy? We tried it once. It was horrible. Everybody got some."
+    },
+    {
+      "id": "nibbles_j05",
+      "character": "nibbles",
+      "title": "Candy Corn",
+      "text": "Candy corn tastes like a candle that wanted to be a vegetable. Two stars. I ate eleven to be sure."
+    },
+    {
+      "id": "nibbles_j06",
+      "character": "nibbles",
+      "title": "The Pebble",
+      "text": "I traded a pebble for a lollipop once. Best deal of my life. The other goblin is still mad. He wanted the pebble back."
+    },
+    {
+      "id": "nibbles_j07",
+      "character": "nibbles",
+      "title": "Raisins",
+      "text": "My review of raisins: they're grapes that gave up. Zero stars. Please return them to the grape."
+    },
+    {
+      "id": "nibbles_j08",
+      "character": "nibbles",
+      "title": "The Gummy Bear",
+      "text": "I live under this porch with a very old gummy bear. We don't talk about the gummy bear. He's seen things."
+    }
+  ],
+  "stories": [
+    {
+      "id": "patch_s01",
+      "character": "patch",
+      "title": "The Locked Cupboard",
+      "text": "At the old estate, I heard whispering inside a locked cupboard. Every midnight, the same dreadful words. A little to the left. I finally opened it. Inside, a ghost, trying to hang a portrait straight. Ninety years we spent on that portrait. Then we noticed. The portrait was fine. The wall was crooked. Ninety years. The WALL."
+    },
+    {
+      "id": "patch_s02",
+      "character": "patch",
+      "title": "The Acorn Knight",
+      "text": "Last autumn, tiny footsteps crossed the porch at midnight. Clink. Clink. A knight approached in armor made of acorn caps. I prepared a speech worthy of my ancient station. The knight was a squirrel. It planted a flag beside me and claimed the porch. I have appealed. Unfortunately, the judge is also a squirrel."
+    },
+    {
+      "id": "patch_s03",
+      "character": "patch",
+      "title": "The Invisible Blanket",
+      "text": "One moonless evening, something under my step gave a long, lonely howl. I answered with my most dignified rumble. Out crept a little ghost dog, dragging an invisible blanket. It curled beside me and fell asleep. I have guarded kingdoms, you know. Now I guard a dog. It's a promotion. Also, I am apparently its pillow."
+    },
+    {
+      "id": "boo_s01",
+      "character": "boo",
+      "title": "The Empty Balcony",
+      "text": "On opening night, applause drifted from the theater's empty balcony. Deliciously eerie! I bowed. The clapping grew faster. I floated upstairs and discovered two enchanted gloves, applauding each other. Neither had seen my performance. Naturally, I invited them downstairs. They applauded my entrance, my speech, and a chair. Such generous critics. Such terrible standards."
+    },
+    {
+      "id": "boo_s02",
+      "character": "boo",
+      "title": "The Shadow's Audition",
+      "text": "A shadow slipped beneath my dressing room door. It had enormous ears and one trembling claw. At last, a worthy rival! Then it dropped a shadow ball at my feet. The claw was a wagging tail. I'd been holding the candle crooked. We played fetch until dawn. My dreadful rival now answers to Biscuit."
+    },
+    {
+      "id": "boo_s03",
+      "character": "boo",
+      "title": "A Voice Below the Stage",
+      "text": "During my grandest speech, a thin wail rose beneath the stage. I stopped. It stopped. I continued. It joined in, higher! Beneath a loose board sat a tiny ghost kettle, desperate to audition. I gave it the leading role. Magnificent voice. Limited movement. Our opening night ended with a standing ovation and a nice cup of imaginary tea."
+    },
+    {
+      "id": "nibbles_s01",
+      "character": "nibbles",
+      "title": "The Perfect Ambush",
+      "text": "Last night a kid walked up with a pillowcase full of candy. Biggest haul I have ever seen. I said, halt, inspection! He said, sure. He held out one chocolate. I ate it. He said, how was it? I said, I need to check the other two hundred. He walked away. Worst inspection of my career."
+    },
+    {
+      "id": "nibbles_s02",
+      "character": "nibbles",
+      "title": "The Bat Rehearsal",
+      "text": "A house down the street gave out apples. Apples! On Halloween! I inspected the apple. It was crunchy, wet, and it had a worm in it. The worm looked at me. I looked at the worm. We both agreed. Next house."
+    },
+    {
+      "id": "nibbles_s03",
+      "character": "nibbles",
+      "title": "The Howling Contest",
+      "text": "I tried to scare a trick or treater. I jumped out and shouted, give me your chocolate! She shouted, NO! Very loud. I ran inside. She followed me in and asked for the bathroom. I gave her my chocolate. I do not know how that happened."
+    }
+  ]
+}

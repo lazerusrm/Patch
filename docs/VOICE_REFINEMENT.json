@@ -1,0 +1,50 @@
+{
+  "recording_assessment": "I cannot hear these recordings. The listener's dissatisfaction is the primary evidence: prioritize creature phonation, not more ham. C920 recording RMS is 22–24 dB above Device, supporting its selection without establishing fidelity. No digital clipping was measured; that does not rule out speaker distortion. C920 captures contain much smaller above-2-kHz energy fractions than the originals, but this cannot isolate speaker, room, microphone or processing effects. Sparse and mistaken Whisper output is not a human intelligibility score.",
+  "profiles": [
+    {
+      "id": "patch",
+      "voice_prompt": "English voice of an original elderly dried-gourd creature. Low-middle baritone with compact, woody midrange resonance, not deep cinema bass. Make ordinary vowels audibly grainy: a firm voiced center with an uneven dry buzz, occasional creaky catches and frayed downward endings. Keep roughness inside the vowel, not merely in an added growl. Short declarations, crisp consonants, economical pitch movement. Begin with settled ceremonial dignity; pause after 'night', then deliver the squirrel complaint with practical resignation rather than grand declamation. Let 'seasonal' land in a crooked, fond half-smile without losing the rasp. Project conversationally at steady volume. No clean presenter cadence, continuous vocal fry, whispering, booming or shouting.",
+      "audition_text": "Well. I am an ancient terror of the night. Unfortunately, the squirrels have discovered I'm seasonal.",
+      "sox_effects": [
+        "highpass",
+        "90",
+        "overdrive",
+        "8",
+        "12"
+      ],
+      "why": "Makes roughness a property of ordinary speech instead of another theatrical flourish. The gentle low cut avoids spending energy on rumble; modest overdrive offers optional harmonic grit without pitch shifting."
+    },
+    {
+      "id": "boo",
+      "voice_prompt": "English voice of an original adult ghost: rounded, hollow, reedlike resonance with a breath-rough edge around clearly voiced vowels. Use a middle-to-upper speaking register, not continuous falsetto. Give the first 'Boo' a briefly sustained vowel with a small uneven quiver, then stop cleanly. Add an occasional faint creaky catch at phrase beginnings. Retain this peculiar timbre even when delighted. Deliver 'Tremble' with grand diction, not extra volume. At 'Oh, you waved', snap instantly into sincere conversational delight. Drop 'I've misplaced my doom' into a dry, embarrassed backstage aside that still carries; the final 'boo' is a small dignified retry. No smooth announcer delivery, continuous whispering, singing, screaming or baked-in echo.",
+      "audition_text": "Boo! Tremble before my terrible presence! Oh, you waved. That's lovely. I've misplaced my doom. Wait... boo. There it is.",
+      "sox_effects": [
+        "chorus",
+        "0.8",
+        "0.8",
+        "25",
+        "0.25",
+        "0.6",
+        "1.5",
+        "-s"
+      ],
+      "why": "Persistent spectral phonation and abrupt mood reversals replace generic spooky narration. One restrained, 25 ms modulated double targets a hovering shimmer without cavernous echoes; the direct voice remains dominant."
+    },
+    {
+      "id": "nibbles",
+      "voice_prompt": "English voice of an original adult goblin. Use a middle speaking register with a sharply forward nasal twang; brightness comes from resonance, not squeaky high pitch. Carry a dry, scratchy reed-buzz inside voiced vowels, with little papery croaks on downward turns. Preserve recognizable vowels and pointed consonants. Make 'Pretend candy inspector' clipped and absurdly official, then drop into a slower, sly confession on 'Fake clipboard'. Keep that confidential voice fully projected. Spring back into smug pleasure on 'mostly crumbs'. Separate thought-bursts with clean pauses instead of rushing. Finish with two short, rough, voiced 'heh' pulses: an impish cackle in the same register, not a squeal. No helium, wet mouth noises, shouting or polished presenter delivery.",
+      "audition_text": "Nibbles! Pretend candy inspector. Real goblin. Fake clipboard. Your candy stays yours. My qualifications are mostly crumbs. Heh, heh!",
+      "sox_effects": [
+        "equalizer",
+        "1400",
+        "1q",
+        "2.5",
+        "overdrive",
+        "8",
+        "18"
+      ],
+      "why": "The original's reported periodic median is already about 429 Hz; prioritize nasal scratch over further pitch lift. Modest 1.4 kHz emphasis and drive target an audible midrange buzz, while the performance supplies the cackle."
+    }
+  ],
+  "limitations": "These prompts and FX recipes are untested candidates. Spectrograms cannot establish perceived rasp or ghoulishness; saturation cannot manufacture authentic irregular phonation. Compare dry and optional FX at levels matched by attenuation, retaining dry versions when processing obscures acting. Preserve processing headroom, then attenuate every preview as needed so its final peak never exceeds -6 dBFS; do not normalize upward. Use the bible's 85% audition setting. Success at 90% covered only eight-second clips; 95% disconnected. Do not raise volume."
+}

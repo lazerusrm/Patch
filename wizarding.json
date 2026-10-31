@@ -1,0 +1,204 @@
+{
+  "facts": [
+    {
+      "question": "What does the Sorting Hat do at Hogwarts in the Harry Potter stories?",
+      "answer": "It sorts new students into four houses: Gryffindor, Ravenclaw, Hufflepuff, and Slytherin.",
+      "source": "https://www.harrypotter.com/fact-file/objects/the-sorting-hat"
+    },
+    {
+      "question": "Who originally owned the Sorting Hat?",
+      "answer": "Godric Gryffindor, one of the four founders of Hogwarts.",
+      "source": "https://www.harrypotter.com/fact-file/objects/the-sorting-hat"
+    },
+    {
+      "question": "Which Hogwarts house is known for courage?",
+      "answer": "Gryffindor values courage and bravery.",
+      "source": "https://www.harrypotter.com/features/hogwarts-house-meanings"
+    },
+    {
+      "question": "Which Hogwarts house values learning?",
+      "answer": "Ravenclaw values learning, wisdom, and wit.",
+      "source": "https://www.harrypotter.com/features/hogwarts-house-meanings"
+    },
+    {
+      "question": "Which Hogwarts house values fairness and loyalty?",
+      "answer": "Hufflepuff values being fair and loyal.",
+      "source": "https://www.harrypotter.com/house/hufflepuff"
+    },
+    {
+      "question": "Which Hogwarts house values resourcefulness and ambition?",
+      "answer": "Slytherin values resourcefulness and ambition: finding clever solutions and working toward goals.",
+      "source": "https://www.harrypotter.com/features/famous-slytherins-through-the-ages"
+    },
+    {
+      "question": "What kind of magical being is Dobby?",
+      "answer": "Dobby is a house-elf.",
+      "source": "https://www.harrypotter.com/fact-file/characters-and-pets/dobby"
+    },
+    {
+      "question": "What does Dobby like to collect?",
+      "answer": "Dobby likes collecting socks.",
+      "source": "https://www.harrypotter.com/fact-file/characters-and-pets/dobby"
+    }
+  ],
+  "jokes": [
+    {
+      "id": "sorting-hat-joke-1",
+      "character": "sorting_hat",
+      "title": "A Sock With Ambition",
+      "text": "I sorted a sock into Slytherin. It immediately disappeared in the wash. Cunning little thing."
+    },
+    {
+      "id": "sorting-hat-joke-2",
+      "character": "sorting_hat",
+      "title": "An Awkward Job",
+      "text": "People ask why sorting takes so long. Have you tried making important decisions with somebody sticking their head in your bottom?"
+    },
+    {
+      "id": "sorting-hat-joke-3",
+      "character": "sorting_hat",
+      "title": "A New Position",
+      "text": "I was offered a job sorting laundry. I shouted GRYFFINDOR at a pair of trousers. Apparently, that was not helpful."
+    },
+    {
+      "id": "sorting-hat-joke-4",
+      "character": "sorting_hat",
+      "title": "The Unexpected Pigeon",
+      "text": "Last time I shouted GRYFFINDOR, a pigeon flew out of me. Nobody looked brave after that."
+    },
+    {
+      "id": "dobby-joke-1",
+      "character": "dobby",
+      "title": "Sock Pockets",
+      "text": "Master has brought Dobby candy. DOBBY IS FREE! Master may keep the raisins."
+    },
+    {
+      "id": "dobby-joke-2",
+      "character": "dobby",
+      "title": "Hide and Seek",
+      "text": "Dobby is excellent at hide-and-seek. Dobby hides behind the curtain and shouts, Dobby is definitely not behind this curtain!"
+    },
+    {
+      "id": "dobby-joke-4",
+      "character": "dobby",
+      "title": "A Sock That Stays",
+      "text": "Dobby asked the pumpkin to guard the sweets. No hands. No stomach. Excellent references."
+    },
+    {
+      "id": "voldemort-joke-1",
+      "character": "voldemort",
+      "title": "Some Respect At Last",
+      "text": "I demanded that everyone bow before me. The automatic door opened. Finally. Someone with manners."
+    },
+    {
+      "id": "voldemort-joke-2",
+      "character": "voldemort",
+      "title": "The Missing Remote",
+      "text": "I considered hiding my soul in the TV remote. Even I would never find it again."
+    },
+    {
+      "id": "voldemort-joke-3",
+      "character": "voldemort",
+      "title": "My Best Speech",
+      "text": "I gave my followers a terrifying speech. My microphone was on mute. They said it was my best work."
+    },
+    {
+      "id": "voldemort-joke-4",
+      "character": "voldemort",
+      "title": "A Laugh Gone Wrong",
+      "text": "I attempted an evil laugh. Got the hiccups. For six minutes I sounded like a very angry rubber duck."
+    },
+    {
+      "id": "dobby-joke-20",
+      "character": "dobby",
+      "title": "Seven Books",
+      "text": "Dobby trapped the Dark Lord in a pumpkin! Harry Potter needed seven books. Dobby needed one pumpkin."
+    },
+    {
+      "id": "dobby-joke-21",
+      "character": "dobby",
+      "title": "Knock Knock",
+      "text": "Knock knock! ... Who is there? Dobby! ... Dobby who? Dobby is so happy you asked!"
+    },
+    {
+      "id": "dobby-joke-22",
+      "character": "dobby",
+      "title": "Trick or Treat",
+      "text": "Dobby went trick or treating! A lady gave Dobby a sock. DOBBY IS FREE! ... Again!"
+    },
+    {
+      "id": "dobby-joke-23",
+      "character": "dobby",
+      "title": "Rude",
+      "text": "Why is the Dark Lord in a pumpkin? Because Dobby was holding a pumpkin, and the Dark Lord was being very rude."
+    },
+    {
+      "id": "dobby-joke-24",
+      "character": "dobby",
+      "title": "Scary Face",
+      "text": "Dobby has been practicing his scary face! ... This is it. Dobby is told he was already doing it."
+    },
+    {
+      "id": "voldemort-joke-10",
+      "character": "voldemort",
+      "title": "Carved",
+      "text": "I used to be He Who Must Not Be Named. Now I am He Who Must Not Be Carved."
+    },
+    {
+      "id": "voldemort-joke-11",
+      "character": "voldemort",
+      "title": "Horcruxes",
+      "text": "Seven Horcruxes, hidden all over Britain. And an elf beat me with a vegetable."
+    },
+    {
+      "id": "voldemort-joke-12",
+      "character": "voldemort",
+      "title": "Wand",
+      "text": "Harry Potter defeated me with a wand. Dobby defeated me with the produce aisle."
+    },
+    {
+      "id": "sorting-hat-joke-10",
+      "character": "sorting_hat",
+      "title": "Pumpkin",
+      "text": "I once sorted a pumpkin. Hufflepuff. Round, warm, and quietly holding a candle for everyone."
+    }
+  ],
+  "stories": [
+    {
+      "id": "sorting-hat-story-1",
+      "character": "sorting_hat",
+      "title": "The Cardboard Rocket",
+      "text": "A visitor wore a cardboard rocket with silver stars. For our pretend house game, I suggested Ravenclaw: those stars could inspire curious questions about space. The visitor chose Hufflepuff instead. Splendid choice; fairness and loyalty deserve a grand launch. Patch counted down from three. We all remained comfortably on the porch."
+    },
+    {
+      "id": "sorting-hat-story-2",
+      "character": "sorting_hat",
+      "title": "The Biscuit Expedition",
+      "text": "For our pretend game, I offered an optional question: would you try a brave adventure or invent a clever plan? Boo chose adventure; Nibbles chose planning. Gryffindor courage and Slytherin resourcefulness, I announced, are both useful themes. Their expedition reached the biscuit plate. An ambitious journey of six inches. Everyone shared the treasure."
+    },
+    {
+      "id": "dobby-story-1",
+      "character": "dobby",
+      "title": "The Bow Brigade",
+      "text": "Dobby found Patch beside a basket of loose ribbons. Oh! Dobby could help. One tiny spell tied every ribbon into a bow. Even the basket wore one. Boo said it looked ready for a party. Dobby bowed back, which was perhaps confusing for the basket. Everyone received a ribbon and a kind word."
+    },
+    {
+      "id": "dobby-story-2",
+      "character": "dobby",
+      "title": "The Sock Museum",
+      "text": "Dobby opened a sock museum on the porch. One striped sock floated above a cushion, turning slowly for visitors. Nibbles asked where its partner was. Dobby checked behind the cushion. Then Dobby checked Dobby's foot. Ah! The missing exhibit was working today. Admission was one kind compliment, and everyone had something lovely to say."
+    },
+    {
+      "id": "voldemort-story-1",
+      "character": "voldemort",
+      "title": "The Polite Duel",
+      "text": "I prepared the most terrifying entrance in wizarding history. Green mist. A sweeping cloak. A thunderous announcement. Then the automatic door trapped my robes. I demanded that it release me. The door opened. I bowed. It closed. We spent twenty minutes having the most polite duel of my career."
+    },
+    {
+      "id": "voldemort-story-2",
+      "character": "voldemort",
+      "title": "The Helpful Mirror",
+      "text": "I enchanted a mirror to announce my greatness every morning. The most powerful wizard! Magnificent. Then it began offering improvements. Less hissing. More smiling. Perhaps a cardigan. By Thursday it had chosen matching slippers. I moved it to the cupboard. It now tells the mop that it has excellent leadership potential."
+    }
+  ]
+}

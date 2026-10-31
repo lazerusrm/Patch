@@ -1,0 +1,5 @@
+faster-whisper==1.2.1
+Pillow==13.0.0
+# PyAV 19 removed metadata_errors, still required by faster-whisper 1.2.1.
+av==16.0.1
+requests==2.32.5

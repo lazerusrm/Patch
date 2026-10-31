@@ -1,0 +1,21 @@
+[Unit]
+Description=PumpkinTalk local Pocket TTS
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/pumpkintalk
+Environment=OMP_NUM_THREADS=3
+Environment=OPENBLAS_NUM_THREADS=3
+ExecStart=/home/pi/pumpkintalk/bin/pocket-tts-3.3.0-aarch64-unknown-linux-gnu/pocket-tts serve --host 127.0.0.1 --port 8765 --language english_18m_refl_2026-10 --default-voice bill_boerst
+Restart=on-failure
+RestartSec=5
+Nice=10
+CPUWeight=10
+MemoryMax=1G
+NoNewPrivileges=yes
+PrivateTmp=yes
+
+[Install]
+WantedBy=multi-user.target

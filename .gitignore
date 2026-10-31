@@ -1,0 +1,35 @@
+.venv*/
+.uv-cache/
+__pycache__/
+runtime/
+cache/
+evidence/*.jsonl
+evidence/*.err
+evidence/*.log
+*.wav
+!assets/voices/*.wav
+!assets/songs/*.wav
+*.jpg
+*.env
+
+!assets/effects/*.wav
+music/
+
+# Never commit credentials or local configuration.
+*.token
+*token*
+*.key
+*.pem
+pumpkin-protect/
+controls.json
+status.json
+*-status.json
+
+# Raw operational logs (device scans, network IDs); kept on the build host.
+evidence/
+
+# Fan-character reference clips are cut from copyrighted recordings; keep them local.
+assets/voices/trogdor*.wav
+assets/voices/sorting_hat*.wav
+assets/voices/dobby*.wav
+assets/voices/voldemort*.wav

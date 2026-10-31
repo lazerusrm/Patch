@@ -1,0 +1,23 @@
+[Unit]
+Description=PumpkinTalk original character voices
+After=network-online.target
+
+[Service]
+WorkingDirectory=/mnt/runner-fast/agent-builds/pumpkintalk-20261023
+Environment=PUMPKIN_TOKEN_FILE=/mnt/runner-fast/agent-builds/pumpkintalk-20261023/runtime/backend.token
+Environment=HF_HOME=/mnt/runner-fast/agent-builds/pumpkintalk-20261023/runtime/huggingface
+Environment=TMPDIR=/mnt/runner-fast/agent-builds/pumpkintalk-20261023/runtime
+Environment=PYTHONDONTWRITEBYTECODE=1
+Environment=TRITON_CACHE_DIR=/mnt/runner-fast/agent-builds/pumpkintalk-20261023/runtime/triton
+Environment=TORCHINDUCTOR_CACHE_DIR=/mnt/runner-fast/agent-builds/pumpkintalk-20261023/runtime/torchinductor
+Environment=CUDA_CACHE_PATH=/mnt/runner-fast/agent-builds/pumpkintalk-20261023/runtime/cuda-cache
+ExecStart=/mnt/runner-fast/agent-builds/pumpkintalk-20261023/.venv-voice/bin/python /mnt/runner-fast/agent-builds/pumpkintalk-20261023/voice_server.py
+Restart=on-failure
+RestartSec=5
+Nice=19
+CPUWeight=1
+MemoryMax=12G
+UMask=0077
+
+[Install]
+WantedBy=default.target

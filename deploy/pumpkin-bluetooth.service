@@ -1,0 +1,12 @@
+[Unit]
+Description=Reconnect commissioned PumpkinTalk speaker
+After=bluetooth.service bluealsa.service
+Wants=bluetooth.service bluealsa.service
+
+[Service]
+Type=oneshot
+User=pi
+Environment=LC_ALL=C
+ExecStart=/usr/bin/python3 /home/pi/pumpkintalk/bluetooth_connect.py B1:2E:84:76:00:D9
+TimeoutStartSec=35
+Nice=10

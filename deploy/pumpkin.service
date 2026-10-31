@@ -1,0 +1,21 @@
+[Unit]
+Description=PumpkinTalk porch camera and characters
+After=network-online.target pumpkin-tts.service bluetooth.service bluealsa.service
+Wants=network-online.target pumpkin-tts.service
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/pumpkintalk
+EnvironmentFile=/home/pi/pumpkintalk/pumpkin.env
+ExecStart=/usr/bin/python3 /home/pi/pumpkintalk/pumpkin.py
+Restart=on-failure
+RestartSec=5
+Nice=10
+CPUWeight=10
+MemoryMax=1G
+NoNewPrivileges=yes
+PrivateTmp=yes
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

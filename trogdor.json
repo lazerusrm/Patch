@@ -1,0 +1,126 @@
+{
+  "facts": [
+    {
+      "question": "Which Strong Bad Email contains the Trogdor drawing lesson?",
+      "answer": "Email 58, titled dragon.",
+      "source": "https://homestarrunner.com/sbemails"
+    },
+    {
+      "question": "What year does the official site list for dragon?",
+      "answer": "2003.",
+      "source": "https://homestarrunner.com/sbemails"
+    },
+    {
+      "question": "Who teaches the dragon drawing lesson?",
+      "answer": "Strong Bad. Naturally, he considers himself the expert.",
+      "source": "https://homestarrunner.com/sbemails"
+    },
+    {
+      "question": "What is the dragon's full name?",
+      "answer": "Trogdor the Burninator.",
+      "source": "https://homestarrunner.com/sbemails"
+    },
+    {
+      "question": "Which character does Strong Bad imagine in japanese cartoon?",
+      "answer": "Stinkoman, his Japanese cartoon counterpart.",
+      "source": "https://homestarrunner.com/sbemails"
+    },
+    {
+      "question": "What comic does Strong Bad introduce in the email comic?",
+      "answer": "Teen Girl Squad.",
+      "source": "https://homestarrunner.com/sbemails"
+    },
+    {
+      "question": "Whose email show surprises Strong Bad in email thunder?",
+      "answer": "Homestar Runner's. Homestar has been checking email too.",
+      "source": "https://homestarrunner.com/sbemails"
+    },
+    {
+      "question": "Who shares a convention booth with Strong Bad in Trogdor Con '97?",
+      "answer": "The Cheat.",
+      "source": "https://homestarrunner.com/toons"
+    },
+    {
+      "question": "What Trogdor birthday does Happy 20th Trogday! celebrate?",
+      "answer": "His twentieth birthday. The official site lists the cartoon under 2023.",
+      "source": "https://homestarrunner.com/toons"
+    },
+    {
+      "question": "Do players cooperate in Trogdor!! The Board Game?",
+      "answer": "Yes. Players work together and take turns controlling Trogdor.",
+      "source": "https://trogdorboardgame.homestarrunner.com/"
+    },
+    {
+      "question": "How many people can play Trogdor!! The Board Game?",
+      "answer": "One to six players.",
+      "source": "https://trogdorboardgame.homestarrunner.com/"
+    },
+    {
+      "question": "Which three cartoon characters appear in the official board game how-to video?",
+      "answer": "Strong Bad, Strong Sad, and Homestar Runner.",
+      "source": "https://trogdorboardgame.homestarrunner.com/"
+    }
+  ],
+  "jokes": [
+    {
+      "id": "trogdor-joke-1",
+      "character": "trogdor",
+      "title": "Arm Budget",
+      "text": "One beefy arm. Six candy bags. Clearly, the weak link is the bags."
+    },
+    {
+      "id": "trogdor-joke-10",
+      "character": "trogdor",
+      "title": "The Bowl",
+      "text": "Trogdor ate the candy bowl. Not the candy. The bowl. He has priorities."
+    },
+    {
+      "id": "trogdor-joke-11",
+      "character": "trogdor",
+      "title": "Judges",
+      "text": "They asked Trogdor to judge the costume contest. He burninated the judges. Everybody wins."
+    },
+    {
+      "id": "trogdor-joke-12",
+      "character": "trogdor",
+      "title": "Costume Tip",
+      "text": "Halloween tip. Dress up as Trogdor and you get extra candy. Mostly because people want you to leave."
+    },
+    {
+      "id": "trogdor-joke-13",
+      "character": "trogdor",
+      "title": "Dragon Man",
+      "text": "Trogdor was a man. I mean, he was a dragon man. ... Mostly he was hungry."
+    },
+    {
+      "id": "trogdor-joke-14",
+      "character": "trogdor",
+      "title": "Email",
+      "text": "I emailed Trogdor about sharing the candy. He replied with a picture of fire. I think that is a no."
+    }
+  ],
+  "stories": [
+    {
+      "id": "trogdor-story-1",
+      "character": "trogdor",
+      "title": "The Great Porch Campaign",
+      "text": "Trogdor approached the cardboard castle. One beefy arm flexed. The drawbridge fell over politely. Inside waited a candy bowl and a note requesting excellent manners. He announced imaginary burnination, supplied his own tiny whoosh, and said please. Total conquest. Everybody got candy. The castle received a sticker."
+    },
+    {
+      "id": "trogdor-story-2",
+      "character": "trogdor",
+      "title": "The Doodle Inspector",
+      "text": "Homestar brought a dragon drawing to the porch. It looked suspiciously like a sandwich. Strong Bad inspected one corner. A consummate V. Acceptable. Trogdor stamped the paper with his single beefy arm. The stamp said NICE TRY in enormous letters. Homestar bowed. The sandwich won best costume."
+    }
+  ],
+  "quotes": [
+    {
+      "text": "Trogdor the Burninator!",
+      "source": "https://homestarrunner.com/sbemails/58-dragon"
+    },
+    {
+      "text": "Consummate V's!",
+      "source": "https://homestarrunner.com/sbemails/58-dragon"
+    }
+  ]
+}

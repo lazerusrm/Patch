@@ -1,0 +1,77 @@
+{
+  "model": "BreezeBlue/Breeze-TTS-2",
+  "model_revision": "3e28c5151381a722f1d8661b4118c298caa77aa4",
+  "inference_source_revision": "6eba901d1845353802652c708a4740fdfc5baa75",
+  "characters": {
+    "patch": {
+      "text": "(clears throat) Well, well. Visitors. I am an ancient terror of the night. Unfortunately, the squirrels have discovered I am seasonal. (laugh)",
+      "instruct": "An original Halloween jack-o-lantern creature. Low-mid male baritone with woody resonance, dry scratchy gravel, a hoarse dried-leaf creak, crooked amusement. Hammy ancient dignity and theatrical pauses suddenly collapse into a grumbled practical complaint. Clearly raspy, strange and ghoulish, but warmly funny and intelligible outdoors. No clean announcer delivery, no sub-bass or screams.",
+      "seed": 42,
+      "reference": "assets/voices/patch.wav"
+    },
+    "boo": {
+      "text": "Boo! Tremble before my terrible presence! Oh, you waved. That's lovely. (sigh) I've misplaced my doom. Wait... boo. There it is.",
+      "instruct": "English voice of an original adult ghost: rounded, hollow, reedlike resonance with a breath-rough edge around clearly voiced vowels. Use a middle-to-upper speaking register, not continuous falsetto. Give the first 'Boo' a briefly sustained vowel with a small uneven quiver, then stop cleanly. Add an occasional faint creaky catch at phrase beginnings. Retain this peculiar timbre even when delighted. Deliver 'Tremble' with grand diction, not extra volume. At 'Oh, you waved', snap instantly into sincere conversational delight. Drop 'I've misplaced my doom' into a dry, embarrassed backstage aside that still carries; the final 'boo' is a small dignified retry. No smooth announcer delivery, continuous whispering, singing, screaming or baked-in echo. Fully commit to the eerie ghost persona: airy, hollow, wavering and deliciously theatrical, with a comically embarrassed dry aside. A distinctive original character, never an ordinary narrator.",
+      "seed": 434,
+      "reference": "assets/voices/boo.wav"
+    },
+    "nibbles": {
+      "text": "Nibbles! Pretend candy inspector. Real goblin. Fake clipboard. Your candy stays yours. My qualifications are mostly crumbs. (laugh)",
+      "instruct": "English voice of an original adult goblin. Use a middle speaking register with a sharply forward nasal twang; brightness comes from resonance, not squeaky high pitch. Carry a dry, scratchy reed-buzz inside voiced vowels, with little papery croaks on downward turns. Preserve recognizable vowels and pointed consonants. Make 'Pretend candy inspector' clipped and absurdly official, then drop into a slower, sly confession on 'Fake clipboard'. Keep that confidential voice fully projected. Spring back into smug pleasure on 'mostly crumbs'. Separate thought-bursts with clean pauses instead of rushing. Finish with two short, rough, voiced 'heh' pulses: an impish cackle in the same register, not a squeal. No helium, wet mouth noises, shouting or polished presenter delivery. Fully commit to the goblin creature texture: nasal, papery, scratchy and slyly cackling, with a conspiratorial croak. Stay in a middle register so consonants stay clear; never squeaky or generic.",
+      "seed": 439,
+      "reference": "assets/voices/nibbles.wav"
+    },
+    "trogdor": {
+      "text": "Then you can add smoke or fire, or maybe some wings, you know, if he's a wing-a-ling dragon. Let's put one of those beefy arms back on him for good measure. That looks really good. Coming out of the back of his neck there. Now he needs a name.",
+      "instruct": "",
+      "seed": 614,
+      "cfg": 1,
+      "engine": "breeze",
+      "reference": "assets/voices/trogdor-breeze-A.wav",
+      "source": "sbemail 58 dragon 74.05-90.35 s, demucs vocals stem (candidate A); owner picked Breeze option one 2026-10-25",
+      "source_channel": "homestarrunnerdotcom"
+    },
+    "sorting_hat": {
+      "text": "Hmm. Difficult. Very difficult. Plenty of courage, I see. Not a bad mind either. There's talent, oh yes, and a thirst to prove yourself. But where to put you?",
+      "instruct": "",
+      "seed": 614,
+      "cfg": 1,
+      "reference": "assets/voices/sorting_hat.wav",
+      "engine": "breeze",
+      "source": "https://www.youtube.com/watch?v=zkjcETPvONA"
+    },
+    "dobby": {
+      "text": "Harry Potter. Such an honour it is. Dobby, sir. Dobby the house elf. Oh, yes, sir. Dobby understands.",
+      "instruct": "",
+      "seed": 614,
+      "cfg": 1,
+      "engine": "breeze",
+      "reference": "assets/voices/dobby-breeze-A2.wav",
+      "soften_exclaim": true,
+      "pitch_range": [
+        250,
+        340
+      ],
+      "retry_seeds": [],
+      "retry_budget": 4,
+      "source": "User-provided dobby1.wav 2.6-12.8 s (Whoo-hoo-hoo removed), 0.3 s pad; Breeze option one 2026-10-25"
+    },
+    "voldemort": {
+      "text": "Welcome, my friend. Thirteen years it's been. And yet, here you stand before me, as though it were only yesterday. I confess myself disappointed.",
+      "instruct": "",
+      "seed": 614,
+      "cfg": 1,
+      "reference": "assets/voices/voldemort.wav",
+      "engine": "breeze",
+      "source": "https://www.youtube.com/watch?v=jJTthfXp16k"
+    }
+  },
+  "clone_model": {
+    "model": "Qwen/Qwen3-TTS-12Hz-0.6B-Base",
+    "revision": "5d83992436eae1d760afd27aff78a71d676296fc"
+  },
+  "clone_models": {
+    "0.6B": "5d83992436eae1d760afd27aff78a71d676296fc",
+    "1.7B": "fd4b254389122332181a7c3db7f27e918eec64e3"
+  }
+}

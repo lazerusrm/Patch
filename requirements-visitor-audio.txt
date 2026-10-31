@@ -1,0 +1,2 @@
+# Private Pi installation: python3 -m pip install --target .visitor-vad -r requirements-visitor-audio.txt
+webrtcvad-wheels==2.0.14.post1
