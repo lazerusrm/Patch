@@ -1,8 +1,8 @@
 """ESP32 WLED light strip that joins the porch show (WLED_HOST, local Wi-Fi, no cloud).
 
 Speech, doorbell lines, dragon effects and scene cues (blackout, lightning, fire, houses...)
-stream to the strip as WLED realtime UDP frames (DNRGB, port 21324): the speaking character's
-colour fills out from the middle with the voice, and cues use the whole strip. Between those
+stream to the strip as WLED realtime UDP frames (DNRGB, port 21324): the whole strip glows in the
+speaking character's colour and swells with the voice, and cues use the whole strip. Between those
 moments no frames are sent, so WLED falls back by itself to its own idle effect (a fire by
 default, or WLED_IDLE_PRESET). Sleep turns the strip off. When the pumpkin stops, the strip
 goes back to exactly what it was doing before. WLED's own brightness and power limit still apply.
@@ -21,7 +21,8 @@ PORT = 21324
 CHUNK = 489  # LEDs per DNRGB packet.
 FPS = 25
 TIMEOUT = 2  # Seconds WLED keeps the last frame before returning to its own effect.
-IDLE_FIRE = {'on': True, 'seg': [{'id': 0, 'fx': 66, 'sx': 110, 'ix': 170, 'pal': 35,
+# Fire Flicker lights every LED (Fire 2012 leaves most of a long strip dark).
+IDLE_FIRE = {'on': True, 'seg': [{'id': 0, 'fx': 45, 'sx': 110, 'ix': 160, 'pal': 0,
                                   'col': [[255, 80, 0], [0, 0, 0], [0, 0, 0]], 'on': True}]}
 SEG_KEYS = ('id', 'start', 'stop', 'on', 'bri', 'col', 'fx', 'sx', 'ix', 'pal', 'c1', 'c2', 'c3', 'frz')
 
@@ -44,8 +45,9 @@ def strip_frame(lights, now, count, colors, houses, rng=random):
             bands = list(houses.values())
             shift = int(now * 3)
             return [bands[(i * len(bands) // count + shift) % len(bands)] for i in range(count)]
-        if mode == 'flicker':
-            return [scale(rgb, rng.uniform(.35, 1)) for _ in range(count)]
+        if mode == 'flicker':  # The whole strip flickers together, with a little shimmer.
+            gust = rng.uniform(.55, 1)
+            return [scale(rgb, gust * rng.uniform(.85, 1)) for _ in range(count)]
         if mode == 'strobe':
             return [scale(rgb, 1 if int(now * 8) % 2 == 0 else .05)] * count
         if mode == 'blink':
@@ -57,9 +59,8 @@ def strip_frame(lights, now, count, colors, houses, rng=random):
     level = max(0.0, min(1.0, lights.level))
     if lights.character == 'trogdor':
         level *= rng.uniform(.6, 1)  # Burninating flicker.
-    half = count / 2
-    lit = half * (.15 + .85 * level)  # The voice fills out from the middle.
-    return [scale(rgb, 1 if abs(i + .5 - half) <= lit else .08) for i in range(count)]
+    # Every LED lit; the whole strip swells with the voice (dim tails vanish under WLED's power limit).
+    return [scale(rgb, .4 + .6 * level)] * count
 
 
 def packets(frame, timeout=TIMEOUT):

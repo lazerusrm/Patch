@@ -23,15 +23,13 @@ class StripFrameTests(unittest.TestCase):
         self.assertIsNone(strip_frame(lights(sleeping=True, level=.8), 10, 290, COLORS, HOUSES))
         self.assertIsNone(strip_frame(lights(sleeping=True, accents=[(0, 20, 'solid', (1, 2, 3))]), 10, 290, COLORS, HOUSES))
 
-    def test_speech_fills_out_from_the_middle_in_the_character_colour(self):
+    def test_speech_lights_every_led_in_the_character_colour_and_swells(self):
         quiet = strip_frame(lights(character='boo', level=0), 10, 100, COLORS, HOUSES)
         loud = strip_frame(lights(character='boo', level=1), 10, 100, COLORS, HOUSES)
         self.assertEqual(len(quiet), 100)
-        self.assertEqual(quiet[50], COLORS['boo'])
-        self.assertNotEqual(quiet[0], COLORS['boo'])
-        self.assertEqual(loud[0], COLORS['boo'])
-        self.assertEqual(loud[99], COLORS['boo'])
-        self.assertLess(sum(p == COLORS['boo'] for p in quiet), sum(p == COLORS['boo'] for p in loud))
+        self.assertEqual(len(set(quiet)), 1)
+        self.assertEqual(loud, [COLORS['boo']] * 100)
+        self.assertTrue(all(0 < q < l for q, l in zip(quiet[0], loud[0]) if l))
 
     def test_unknown_character_uses_patch(self):
         frame = strip_frame(lights(character='mystery', level=1), 10, 10, COLORS, HOUSES)
@@ -41,13 +39,13 @@ class StripFrameTests(unittest.TestCase):
         state = lights(level=.5, accents=[(0, 20, 'solid', (9, 9, 9)), (5, 20, 'off', None)])
         self.assertEqual(strip_frame(state, 10, 4, COLORS, HOUSES), [(0, 0, 0)] * 4)
         self.assertEqual(strip_frame(state, 3, 4, COLORS, HOUSES), [(9, 9, 9)] * 4)
-        self.assertEqual(strip_frame(state, 25, 4, COLORS, HOUSES)[2], COLORS['patch'])  # Cue over.
+        self.assertEqual(strip_frame(state, 25, 4, COLORS, HOUSES)[2], (178, 56, 0))  # Cue over: speech at half.
 
     def test_cue_modes(self):
         rng = random.Random(1)
         flicker = strip_frame(lights(accents=[(0, 9, 'flicker', (200, 100, 0))]), 1, 50, COLORS, HOUSES, rng)
         self.assertGreater(len(set(flicker)), 1)
-        self.assertTrue(all(r <= 200 for r, _, _ in flicker))
+        self.assertTrue(all(200 * .55 * .85 - 1 <= r <= 200 for r, _, _ in flicker))
         on = strip_frame(lights(accents=[(0, 9, 'strobe', (255, 255, 255))]), 1.0, 3, COLORS, HOUSES)
         off = strip_frame(lights(accents=[(0, 9, 'strobe', (255, 255, 255))]), 1.13, 3, COLORS, HOUSES)
         self.assertNotEqual(on, off)

@@ -100,14 +100,15 @@ calibration. USB speaker tests above 90% previously caused peripheral dropouts.
 
 An ESP32 running WLED (0.15, 290 LEDs, local Wi-Fi) joins the porch show through
 `wled_strip.py`. Set `WLED_HOST=<address>` in the Pi's `pumpkin.env` (give the controller a
-DHCP reservation); leave it unset to disable. While a character speaks, their colour fills
-the strip out from the middle with the voice; doorbell lines, dragon effects and scene cues
+DHCP reservation); leave it unset to disable. While a character speaks, the whole strip glows
+in their colour and swells with the voice; doorbell lines, dragon effects and scene cues
 (blackout, lightning, fire, ghost, houses, lumos, house colours) use the whole strip. Frames
 are WLED realtime UDP (DNRGB, port 21324) with a 2-second timeout, so between moments WLED
-runs its own idle fire (Fire 2012) or `WLED_IDLE_PRESET=<preset id>`. Sleep turns the strip
+runs its own idle fire (Fire Flicker, every LED) or `WLED_IDLE_PRESET=<preset id>`. Sleep turns the strip
 off; stopping the pumpkin restores the controller's previous state. `WLED_DELAY_SECONDS`
 (default `WIZ_DELAY_SECONDS`) lines it up with the speakers. WLED's own brightness and
-current limit still apply. "Receive UDP realtime" must stay enabled in WLED's Sync settings.
+current limit still apply: WLED reserves about 1 mA per LED, so a 425 mA output limit leaves
+only ~135 mA for 290 LEDs and everything looks dim. Set the limit to match the power supply. "Receive UDP realtime" must stay enabled in WLED's Sync settings.
 
 ## Special character modes
 
