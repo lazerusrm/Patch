@@ -21,8 +21,9 @@ PORT = 21324
 CHUNK = 489  # LEDs per DNRGB packet.
 FPS = 25
 TIMEOUT = 2  # Seconds WLED keeps the last frame before returning to its own effect.
-# Fire Flicker lights every LED (Fire 2012 leaves most of a long strip dark).
-IDLE_FIRE = {'on': True, 'seg': [{'id': 0, 'fx': 45, 'sx': 110, 'ix': 160, 'pal': 0,
+# Candle Multi: every LED its own candle. Measured on the 290-LED strip at brightness 128:
+# ~1.8 A, against ~0.14 A for Fire 2012 and Fire Flicker, which leave most of it dark.
+IDLE_FIRE = {'on': True, 'seg': [{'id': 0, 'fx': 102, 'sx': 110, 'ix': 160, 'pal': 0,
                                   'col': [[255, 80, 0], [0, 0, 0], [0, 0, 0]], 'on': True}]}
 SEG_KEYS = ('id', 'start', 'stop', 'on', 'bri', 'col', 'fx', 'sx', 'ix', 'pal', 'c1', 'c2', 'c3', 'frz')
 
