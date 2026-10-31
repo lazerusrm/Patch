@@ -207,6 +207,14 @@ class StripRunTests(unittest.TestCase):
         self.assertIsNone(strip.delayed(10.2))
         self.assertIsNotNone(strip.delayed(10.75))
 
+    def test_brightness_applied_with_the_idle_effect(self):
+        with patch.dict('os.environ', {'WLED_BRIGHTNESS': '210'}):
+            strip = WledStrip(lights(), COLORS, HOUSES, host='x', delay=0)
+        self.assertEqual(strip.idle['bri'], 210)
+        self.assertEqual(strip.idle['seg'], wled_strip.IDLE_FIRE['seg'])
+        with patch.dict('os.environ', {'WLED_BRIGHTNESS': '0'}), self.assertRaises(ValueError):
+            WledStrip(lights(), COLORS, HOUSES, host='x', delay=0)
+
     def test_invalid_delay_rejected(self):
         with self.assertRaises(ValueError):
             WledStrip(lights(), COLORS, HOUSES, host='x', delay=5)

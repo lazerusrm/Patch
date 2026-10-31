@@ -109,7 +109,9 @@ off; stopping the pumpkin restores the controller's previous state. `WLED_DELAY_
 (default `WIZ_DELAY_SECONDS`) lines it up with the speakers. WLED's own brightness and
 current limit still apply: WLED reserves about 1 mA per LED, so a 425 mA output limit leaves
 only ~135 mA for 290 LEDs and everything looks dim. Set the limit to match the power supply
-(this install: 5 V supply rated about 10 A, limit set to 8000 mA, brightness 210). "Receive UDP realtime" must stay enabled in WLED's Sync settings.
+(this install: 5 V supply rated about 10 A, limit set to 8000 mA). WLED's boot brightness is kept
+low (40) so the start-up surge cannot brown out the ESP32 while Wi-Fi connects; the pumpkin then
+raises it to `WLED_BRIGHTNESS` (here 210) with the idle effect, within 30 s of any WLED restart. "Receive UDP realtime" must stay enabled in WLED's Sync settings.
 
 The strip stands in front of the porch, so after dark (webcam night mode) it doubles as a white
 work light: it comes on about 0.8 s before each camera look (arrival costume judging, the Sorting

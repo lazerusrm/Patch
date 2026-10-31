@@ -88,6 +88,13 @@ class WledStrip:
             raise ValueError('WLED_DELAY_SECONDS must be 0..2')
         preset = os.environ.get('WLED_IDLE_PRESET', '').strip()
         self.idle = {'on': True, 'ps': int(preset)} if preset else IDLE_FIRE
+        # WLED boots dim (its own boot brightness) so the start-up surge cannot brown it out while
+        # Wi-Fi connects; once it answers here, WLED_BRIGHTNESS brings it up to full.
+        brightness = os.environ.get('WLED_BRIGHTNESS', '').strip()
+        if brightness:
+            if not 1 <= int(brightness) <= 255:
+                raise ValueError('WLED_BRIGHTNESS must be 1..255')
+            self.idle = {**self.idle, 'bri': int(brightness)}
         self.count = 0
         self.saved = None
         self.base = None  # 'idle' or 'off': the state last given to WLED itself.
