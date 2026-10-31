@@ -231,7 +231,7 @@ class Brain:
                     picture.verify()
                 image = Path(directory) / 'visitor.jpg'
                 image.write_bytes(raw)
-            primary = (os.environ.get('PUMPKIN_MODEL', 'gpt-6.1-sol'),
+            primary = (os.environ.get('PUMPKIN_MODEL', 'gpt-6.1-terra'),
                        os.environ.get('PUMPKIN_REASONING_EFFORT', 'low'))
             hedge = (os.environ.get('PUMPKIN_HEDGE_MODEL', 'gpt-6-luna'),
                      os.environ.get('PUMPKIN_HEDGE_EFFORT', 'none'))
@@ -339,7 +339,7 @@ class Handler(BaseHTTPRequestHandler):
         if not self.authorized():
             return self.send_json(401, {'error': 'Unauthorized'})
         self.send_json(200 if self.path == '/health' else 404,
-                       {'ready': self.path == '/health', 'model': os.environ.get('PUMPKIN_MODEL', 'gpt-6.1-sol')})
+                       {'ready': self.path == '/health', 'model': os.environ.get('PUMPKIN_MODEL', 'gpt-6.1-terra')})
 
     def do_POST(self):
         if not self.authorized():

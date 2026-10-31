@@ -53,6 +53,50 @@ class StripFrameTests(unittest.TestCase):
         self.assertEqual(set(houses), set(HOUSES.values()))
 
 
+class WorkLightTests(unittest.TestCase):
+    def test_work_light_is_white_over_speech_and_cues_but_not_asleep(self):
+        state = lights(level=.5, work_until=12, accents=[(0, 20, 'cycle', None)])
+        self.assertEqual(strip_frame(state, 10, 5, COLORS, HOUSES), [(255, 255, 255)] * 5)
+        self.assertNotEqual(strip_frame(state, 13, 5, COLORS, HOUSES)[0], (255, 255, 255))
+        state.sleeping = True
+        self.assertIsNone(strip_frame(state, 10, 5, COLORS, HOUSES))
+
+    def porch(self, night, enabled=True, sleeping=False):
+        from pumpkin import Pumpkin
+        p = Pumpkin.__new__(Pumpkin)
+        seen = []
+        p.speech = SimpleNamespace(lights=SimpleNamespace(wled=SimpleNamespace(enabled=enabled),
+                                                          work_light=seen.append))
+        p.controls = SimpleNamespace(sleeping=sleeping)
+        p.webcam_night = night
+        return p, seen
+
+    def test_porch_light_only_after_dark_by_default(self):
+        with patch.dict('os.environ', {}, clear=False):
+            import os
+            os.environ.pop('WLED_WORK_LIGHT', None)
+            p, seen = self.porch(night=False)
+            self.assertFalse(p.porch_light(5))
+            p, seen = self.porch(night=True)
+            self.assertTrue(p.porch_light(5))
+            self.assertEqual(seen, [5])
+            for kwargs in ({'enabled': False}, {'sleeping': True}):
+                p, seen = self.porch(night=True, **kwargs)
+                self.assertFalse(p.porch_light(5))
+        with patch.dict('os.environ', {'WLED_WORK_LIGHT': 'always'}):
+            self.assertTrue(self.porch(night=False)[0].porch_light(5))
+        with patch.dict('os.environ', {'WLED_WORK_LIGHT': 'off'}):
+            self.assertFalse(self.porch(night=True)[0].porch_light(5))
+
+    def test_lights_work_light_sets_and_clears(self):
+        from pumpkin import Lights
+        state = Lights.__new__(Lights)
+        state.work_light(4)
+        self.assertGreater(state.work_until, time.monotonic() + 3)
+        state.work_light(0)
+        self.assertLessEqual(state.work_until, time.monotonic())
+
+
 class PacketTests(unittest.TestCase):
     def test_dnrgb_chunks_cover_every_led(self):
         frame = [(i % 256, 1, 2) for i in range(600)]
@@ -128,6 +172,28 @@ class StripRunTests(unittest.TestCase):
         strip, calls, _ = self.run_strip(lights(level=1), seconds=.3, fail=True)
         self.assertEqual([path for path, _ in calls], ['/json/info'])
         self.assertIsNone(strip.saved)
+
+    def test_reboot_while_idle_sets_the_idle_effect_again(self):
+        uptimes = iter([500, 3])
+        posts = []
+
+        def request(path, body=None):
+            if path == '/json/info':
+                return {'leds': {'count': 6}, 'uptime': next(uptimes, 4)}
+            if body is None:
+                return {'on': True, 'bri': 1, 'seg': []}
+            posts.append(body)
+            return {}
+
+        strip = WledStrip(lights(), COLORS, HOUSES, host='10.0.0.9', delay=0)
+        with patch.object(strip, 'request', side_effect=request), \
+             patch.object(wled_strip, 'CHECK_SECONDS', .05), \
+             patch.object(wled_strip.socket, 'socket', return_value=FakeSocket()):
+            strip.start()
+            time.sleep(.3)
+            strip.stop.set()
+            strip.thread.join(timeout=2)
+        self.assertEqual(posts.count(wled_strip.IDLE_FIRE), 2)
 
     def test_delay_holds_frames_back(self):
         state = lights()

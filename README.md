@@ -111,6 +111,16 @@ current limit still apply: WLED reserves about 1 mA per LED, so a 425 mA output 
 only ~135 mA for 290 LEDs and everything looks dim. Set the limit to match the power supply
 (this install: 5 V supply rated about 10 A, limit set to 7000 mA). "Receive UDP realtime" must stay enabled in WLED's Sync settings.
 
+The strip stands in front of the porch, so after dark (webcam night mode) it doubles as a white
+work light: it comes on about 0.8 s before each camera look (arrival costume judging, the Sorting
+Hat's look) and for the whole "stand over there" step of an interactive sorting, then hands back
+to the show. `WLED_WORK_LIGHT=always` lights daytime looks too; `off` disables it;
+`WORK_LIGHT_LEAD_SECONDS` sets the lead. If the controller reboots, the pumpkin notices within
+30 s and sets up the idle effect again.
+
+The host backend uses `gpt-6.1-terra` at low reasoning effort (owner choice 2026-10-31, about 4 s
+replies), with `gpt-6-luna` as the hedge; `PUMPKIN_MODEL` / `PUMPKIN_REASONING_EFFORT` override it.
+
 ## Special character modes
 
 Say “Hey Pumpkinhead, Trogdor mode”, “Hey Pumpkinhead, Sorting Hat mode”, or

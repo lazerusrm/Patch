@@ -4,7 +4,8 @@ Speech, doorbell lines, dragon effects and scene cues (blackout, lightning, fire
 stream to the strip as WLED realtime UDP frames (DNRGB, port 21324): the whole strip glows in the
 speaking character's colour and swells with the voice, and cues use the whole strip. Between those
 moments no frames are sent, so WLED falls back by itself to its own idle effect (a fire by
-default, or WLED_IDLE_PRESET). Sleep turns the strip off. When the pumpkin stops, the strip
+default, or WLED_IDLE_PRESET). The strip sits in front of the porch, so it also works as a white
+work light while the cameras look at a visitor (Lights.work_light). Sleep turns the strip off. When the pumpkin stops, the strip
 goes back to exactly what it was doing before. WLED's own brightness and power limit still apply.
 """
 from collections import deque
@@ -25,6 +26,8 @@ TIMEOUT = 2  # Seconds WLED keeps the last frame before returning to its own eff
 # ~1.8 A, against ~0.14 A for Fire 2012 and Fire Flicker, which leave most of it dark.
 IDLE_FIRE = {'on': True, 'seg': [{'id': 0, 'fx': 102, 'sx': 110, 'ix': 160, 'pal': 0,
                                   'col': [[255, 80, 0], [0, 0, 0], [0, 0, 0]], 'on': True}]}
+WHITE = (255, 255, 255)
+CHECK_SECONDS = 30  # While idle, look in on WLED this often: a reboot loses the idle effect.
 SEG_KEYS = ('id', 'start', 'stop', 'on', 'bri', 'col', 'fx', 'sx', 'ix', 'pal', 'c1', 'c2', 'c3', 'frz')
 
 
@@ -38,6 +41,8 @@ def strip_frame(lights, now, count, colors, houses, rng=random):
     from_cue = [accent for accent in getattr(lights, 'accents', ()) if accent[0] <= now < accent[1]]
     if lights.sleeping or count <= 0:
         return None
+    if getattr(lights, 'work_until', 0) > now:  # Porch work light: white so the cameras can see.
+        return [WHITE] * count
     if from_cue:
         _, _, mode, rgb = max(from_cue, key=lambda accent: accent[0])  # The newest cue wins.
         if mode == 'off':
@@ -84,6 +89,7 @@ class WledStrip:
         self.count = 0
         self.saved = None
         self.base = None  # 'idle' or 'off': the state last given to WLED itself.
+        self.uptime, self.checked = 0, 0.0
         self.history = deque()
         self.stop = threading.Event()
         self.thread = None
@@ -103,6 +109,7 @@ class WledStrip:
         """Learn the LED count and remember WLED's own state to restore later."""
         info = self.request('/json/info')
         self.count = int(info['leds']['count'])
+        self.uptime, self.checked = int(info.get('uptime', 0)), time.monotonic()
         if self.saved is None:
             state = self.request('/json/state')
             self.saved = {'on': state.get('on', True), 'bri': state.get('bri', 128),
@@ -136,6 +143,12 @@ class WledStrip:
                         continue
                     self.connect()
                 frame = self.delayed(now)
+                if frame is None and now - self.checked > CHECK_SECONDS:
+                    uptime = int(self.request('/json/info').get('uptime', 0))
+                    if uptime < self.uptime:
+                        logging.info('WLED strip %s restarted; setting it up again', self.host)
+                        self.base = None
+                    self.uptime, self.checked = uptime, now
                 # WLED's own state underneath: the idle effect while awake (live frames need the
                 # strip on, and it returns there after TIMEOUT), off while asleep.
                 want = 'off' if frame is None and self.lights.sleeping else 'idle'

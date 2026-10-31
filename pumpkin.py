@@ -112,6 +112,7 @@ class Lights:
         self.character = 'patch'
         self.sleeping = False
         self.accents = []  # (start, end, mode, rgb) monotonic: doorbell lines, dragon effects, scene cues.
+        self.work_until = 0.0  # Monotonic end of the WLED strip's white porch work light.
         self.wiz_delay = float(os.environ.get('WIZ_DELAY_SECONDS', '0'))  # Calibrate bulbs against the speakers.
         if not 0 <= self.wiz_delay <= 2:
             raise ValueError('WIZ_DELAY_SECONDS must be 0..2')
@@ -144,6 +145,10 @@ class Lights:
         if self.wled.enabled:
             self.wled.start()
             atexit.register(self.wled.close)
+
+    def work_light(self, seconds):
+        """White on the front-of-porch WLED strip for `seconds` so the cameras can see; 0 ends it."""
+        self.work_until = time.monotonic() + max(0, min(30, seconds))
 
     def flash(self, rgb, seconds, flicker=False, start=0, mode=None):
         now = time.monotonic()
@@ -1831,10 +1836,17 @@ class Pumpkin:
                     if self.frame is None or time.monotonic() - self.frame_time > 1.5:
                         return None
                     return self.frame.copy()
-            encoded = visitor_image(snapshot, current or (lambda: True), max_width=384)
-            sequence = bool(encoded)
-            if not encoded and getattr(self, 'bridge', None) and (current is None or current()):
-                encoded = self.bridge.snapshot()
+            lit = self.porch_light(6)
+            if lit:  # Give the camera's exposure a moment to settle on the lit visitor.
+                self.stop.wait(float(os.environ.get('WORK_LIGHT_LEAD_SECONDS', '.8')))
+            try:
+                encoded = visitor_image(snapshot, current or (lambda: True), max_width=384)
+                sequence = bool(encoded)
+                if not encoded and getattr(self, 'bridge', None) and (current is None or current()):
+                    encoded = self.bridge.snapshot()
+            finally:
+                if lit:
+                    self.porch_light(0)
             if current is not None and not current():
                 return {'text': ''}
             if not encoded:
@@ -1916,7 +1928,11 @@ class Pumpkin:
         try:
             if pool:
                 # Interactive: place them in front of a camera, look, comment, then sort.
+                # Light the porch while they find their spot and the Hat looks (turn() ends it after the picture).
+                self.porch_light(float(os.environ.get('SORT_POSITION_SECONDS', '7')) + 8)
                 seen = self.place_visitor(self.sort_camera(), valid)
+                if not seen:
+                    self.porch_light(0)
                 look = pool.submit(self.turn, 'sorting_hat', [], image=True, current=valid,
                                    purpose='sorting', camera=seen) if seen else None
                 self.speech.say('sorting_hat', random.choice(LOOKING) if seen else NOT_FOUND, current=valid)
@@ -1973,6 +1989,19 @@ class Pumpkin:
         delay = self.bus_delay()
         lights.cue('houses', at, start=delay)
         lights.cue(house.lower(), total - at + 4, start=delay + at)  # Through the fanfare.
+
+    def porch_light(self, seconds):
+        """Light visitors for the cameras with the WLED strip in front of the porch. Only after dark
+        (webcam night mode) unless WLED_WORK_LIGHT=always; WLED_WORK_LIGHT=off disables it."""
+        lights = getattr(self.speech, 'lights', None)
+        mode = os.environ.get('WLED_WORK_LIGHT', 'night')
+        controls = getattr(self, 'controls', None)
+        if (not hasattr(lights, 'work_light') or not getattr(getattr(lights, 'wled', None), 'enabled', False)
+                or mode == 'off' or (mode != 'always' and not getattr(self, 'webcam_night', False))
+                or getattr(controls, 'sleeping', False)):
+            return False
+        lights.work_light(seconds)
+        return True
 
     def sort_camera(self):
         """Which directions to give: back down the path if they are at the door, otherwise toward the webcam."""
