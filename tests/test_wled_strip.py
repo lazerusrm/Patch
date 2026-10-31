@@ -30,6 +30,9 @@ class StripFrameTests(unittest.TestCase):
         self.assertEqual(len(set(quiet)), 1)
         self.assertEqual(loud, [COLORS['boo']] * 100)
         self.assertTrue(all(0 < q < l for q, l in zip(quiet[0], loud[0]) if l))
+        half = strip_frame(lights(character='boo', level=.5), 10, 1, COLORS, HOUSES)[0]
+        self.assertLess(quiet[0][2], COLORS['boo'][2] * .1)  # Near dark between syllables.
+        self.assertLess(half[2], COLORS['boo'][2] * .4)      # Strong contrast through the middle.
 
     def test_unknown_character_uses_patch(self):
         frame = strip_frame(lights(character='mystery', level=1), 10, 10, COLORS, HOUSES)
@@ -39,7 +42,7 @@ class StripFrameTests(unittest.TestCase):
         state = lights(level=.5, accents=[(0, 20, 'solid', (9, 9, 9)), (5, 20, 'off', None)])
         self.assertEqual(strip_frame(state, 10, 4, COLORS, HOUSES), [(0, 0, 0)] * 4)
         self.assertEqual(strip_frame(state, 3, 4, COLORS, HOUSES), [(9, 9, 9)] * 4)
-        self.assertEqual(strip_frame(state, 25, 4, COLORS, HOUSES)[2], (178, 56, 0))  # Cue over: speech at half.
+        self.assertEqual(strip_frame(state, 25, 4, COLORS, HOUSES)[2], (84, 26, 0))  # Cue over: speech at half.
 
     def test_cue_modes(self):
         rng = random.Random(1)

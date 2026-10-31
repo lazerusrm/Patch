@@ -27,6 +27,7 @@ TIMEOUT = 2  # Seconds WLED keeps the last frame before returning to its own eff
 IDLE_FIRE = {'on': True, 'seg': [{'id': 0, 'fx': 102, 'sx': 110, 'ix': 160, 'pal': 0,
                                   'col': [[255, 80, 0], [0, 0, 0], [0, 0, 0]], 'on': True}]}
 WHITE = (255, 255, 255)
+SPEECH_FLOOR, SPEECH_CURVE = .06, 1.8  # Strip brightness = floor + rest * level**curve.
 CHECK_SECONDS = 30  # While idle, look in on WLED this often: a reboot loses the idle effect.
 SEG_KEYS = ('id', 'start', 'stop', 'on', 'bri', 'col', 'fx', 'sx', 'ix', 'pal', 'c1', 'c2', 'c3', 'frz')
 
@@ -65,8 +66,9 @@ def strip_frame(lights, now, count, colors, houses, rng=random):
     level = max(0.0, min(1.0, lights.level))
     if lights.character == 'trogdor':
         level *= rng.uniform(.6, 1)  # Burninating flicker.
-    # Every LED lit; the whole strip swells with the voice (dim tails vanish under WLED's power limit).
-    return [scale(rgb, .4 + .6 * level)] * count
+    # Every LED lit; the whole strip pulses hard with the voice: near-dark between syllables, full on
+    # peaks. The curve keeps quiet sounds dim so loud ones stand out (owner: more accentuated).
+    return [scale(rgb, SPEECH_FLOOR + (1 - SPEECH_FLOOR) * level ** SPEECH_CURVE)] * count
 
 
 def packets(frame, timeout=TIMEOUT):
